@@ -1,0 +1,29 @@
+package pages
+
+templ Card() {
+	<div class="max-w-md mx-auto mt-10">
+		<div
+			class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-200"
+			hx-get="/card-content"
+			hx-trigger="click"
+			hx-target="#card-content"
+		>
+			<!-- Card Header -->
+			<div class="font-semibold text-lg mb-2">Card Title</div>
+			<!-- Card Content -->
+			<div id="card-content" class="text-gray-700 text-base">
+				This is a simple card. Click to load more content.
+			</div>
+			<!-- Card Footer (Button) -->
+			<div class="mt-4 text-right">
+				<button
+					class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 transition-colors"
+					hx-get="/card-action"
+					hx-swap="outerHTML"
+				>
+					Click Me
+				</button>
+			</div>
+		</div>
+	</div>
+}

@@ -1,0 +1,28 @@
+package pages
+
+templ AllIssues(columnHeaders []string) {
+	<table class="min-w-full bg-white">
+		<thead>
+			<tr>
+				for _, header := range columnHeaders {
+					<th class="w-1/3 px-4 py-2 text-left text-sm font-medium text-gray-700">{ header }</th>
+				}
+			</tr>
+		</thead>
+		<tbody class="divide-y divide-gray-200">
+			<tr>
+				<td class="px-4 py-2 text-sm text-gray-900">Fix login issue</td>
+				<td class="px-4 py-2 text-sm text-gray-900">John Doe</td>
+				<td class="px-4 py-2 text-sm text-yellow-600">In Progress</td>
+				<td class="px-4 py-2 text-sm text-gray-500">2024-10-12</td>
+			</tr>
+			<tr>
+				<td class="px-4 py-2 text-sm text-gray-900">Add new API endpoint</td>
+				<td class="px-4 py-2 text-sm text-gray-900">Jane Smith</td>
+				<td class="px-4 py-2 text-sm text-green-600">Completed</td>
+				<td class="px-4 py-2 text-sm text-gray-500">2024-10-11</td>
+			</tr>
+			<!-- Additional rows here -->
+		</tbody>
+	</table>
+}

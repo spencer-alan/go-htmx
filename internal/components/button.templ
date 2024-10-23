@@ -1,0 +1,11 @@
+package components
+
+templ MakeButton(route string, style string) {
+	<button
+		class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2"
+		hx-get="/button-action"
+		hx-swap="outerHTML"
+	>
+		Click Me
+	</button>
+}

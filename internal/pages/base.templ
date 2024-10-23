@@ -1,0 +1,45 @@
+package pages
+
+import (
+	"ghost/internal/common"
+	"ghost/internal/components"
+)
+
+templ Base(links []common.Link) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<title>GHOST</title>
+			<link rel="stylesheet" href="/static/output.css"/> //CSS should go here?
+		</head>
+		<body class="grid grid-cols-[16rem_1fr]">
+			<div class="flex items-center justify-center bg-slate-400">
+				<img src="static/images/logo.png" alt="Logo" class="h-16"/>
+				<h1>Ghost</h1>
+			</div>
+			<nav class="w-100 bg-gray-800">
+				<div class="container mx-auto px-4">
+					<div class="flex items-center h-16">
+						<div class="flex items-center">
+							for _, link := range links {
+								<a href={ templ.URL(link.Href) } class="text-white px-3 py-2 rounded-md text-sm font-medium">
+									{ link.Title }
+								</a>
+							}
+							@components.MakeButton("/create", "primary")
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- Sidebar -->
+			@MakeSideBar()
+			<!-- Main Content Area -->
+			<div id="main-content" class="w-3/4 p-4">
+				<main>I dunno, is this thing on?</main>
+			</div>
+			<script src="/static/htmx.min.js"></script>
+			<script src="/static/alpine.min.js"></script>
+		</body>
+	</html>
+}
